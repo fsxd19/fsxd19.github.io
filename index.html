@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Faïs Saïd — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E9F0EE;--ink:#0B2B35;--mute:#4B6770;--card:#FFFFFF;--line:#C5D4D0;--sun:#F2B705;--wave:11,43,53;
+--d:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--b:'Hanken Grotesk','Segoe UI',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07181E;--ink:#E6F0EE;--mute:#8FA8AE;--card:#0E2630;--line:#1E3C47;--wave:230,240,238}}
+:root[data-theme="dark"]{--bg:#07181E;--ink:#E6F0EE;--mute:#8FA8AE;--card:#0E2630;--line:#1E3C47;--wave:230,240,238}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--b)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+#w{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.hero .wrap{position:relative;pointer-events:none}
+.hero a,.hero .tag{pointer-events:auto}
+h1{font:800 clamp(5rem,26vw,15rem)/.82 var(--d);letter-spacing:-.04em;margin:0 0 28px}
+.hero p{font:500 clamp(1.2rem,3.4vw,1.9rem)/1.3 var(--d);max-width:20em;margin:0 0 26px}
+.tag{display:inline-block;background:var(--sun);color:#0B2B35;font-weight:600;font-size:.95rem;padding:6px 14px;border-radius:99px;margin:0 8px 10px 0}
+.cta{display:inline-block;margin-top:22px;padding:13px 24px;border-radius:99px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600}
+section{padding:84px 0}
+h2{font:800 clamp(2rem,6vw,3.2rem)/1.05 var(--d);letter-spacing:-.02em;margin:0 0 36px}
+h3{font:800 1.4rem/1.2 var(--d);margin:0 0 8px}
+.feat{display:grid;gap:28px;grid-template-columns:1fr;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+@media(min-width:820px){.feat{padding:40px}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-size:.88rem;color:var(--mute)}
+ul.f{padding-left:1.1em;margin:14px 0 0}ul.f li{margin:4px 0}
+.fleet{background:var(--ink);color:var(--bg);border-radius:16px;padding:20px;align-self:start}
+.fleet h4{margin:0 0 14px;font:500 .95rem var(--b);opacity:.75}
+.boat{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.07);color:inherit;border:0;border-radius:12px;padding:14px 16px;margin-bottom:10px;font:inherit;cursor:pointer;text-align:left}
+.boat:hover{background:rgba(255,255,255,.13)}
+.boat b{font:800 1.05rem var(--d)}
+.boat small{display:block;opacity:.7}
+.st{border-radius:99px;padding:4px 12px;font-size:.85rem;font-weight:600;white-space:nowrap;transition:background .35s,color .35s}
+.s0{background:#4CC3FF;color:#06222C}.s1{background:#7BE0A4;color:#06222C}.s2{background:#F2B705;color:#06222C}
+.fleet p{font-size:.85rem;opacity:.65;margin:6px 0 0}
+.grid{display:grid;gap:22px;grid-template-columns:1fr;margin-top:22px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.card{border:1px solid var(--line);border-radius:14px;padding:26px;background:var(--card)}
+.card p{margin:0;color:var(--mute)}
+.sk{display:grid;gap:30px;grid-template-columns:1fr}
+@media(min-width:720px){.sk{grid-template-columns:repeat(3,1fr)}}
+.sk h3{border-bottom:3px solid var(--sun);display:inline-block;padding-bottom:4px;margin-bottom:12px}
+.sk ul{list-style:none;padding:0;margin:0;color:var(--mute)}.sk li{padding:3px 0}
+.goal{font:500 clamp(1.4rem,3.6vw,2.1rem)/1.3 var(--d);max-width:24em;margin:0}
+footer{border-top:1px solid var(--line);padding:60px 0 40px}
+footer a.m{font:800 clamp(1.6rem,6vw,3rem)/1.1 var(--d);text-decoration-color:var(--sun);text-decoration-thickness:4px;text-underline-offset:6px;word-break:break-all}
+footer p{color:var(--mute)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+<canvas id="w" aria-hidden="true"></canvas>
+<div class="wrap">
+<h1>Faïs<br>Saïd</h1>
+<p>Titulaire d'un BTS CIEL, formé aux réseaux et à la cybersécurité. Je conçois des applications web, de la base de données à l'écran.</p>
+<span class="tag">Recherche une alternance</span><span class="tag">Réseaux · Dev · IA</span><br>
+<a class="cta" href="#projets">Voir mes projets</a> <a class="cta" href="CV_Fais_Said.pdf" target="_blank" rel="noopener" style="background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)">Mon CV</a>
+</div>
+</header>
+
+<main>
+<section id="projets"><div class="wrap">
+<h2>Ce que j'ai construit</h2>
+<article class="feat rv">
+<div>
+<h3>Marin d'Eau Douce</h3>
+<p>Application web de gestion de flotte et de réservation de bateaux électriques, conçue comme un vrai environnement de production.</p>
+<ul class="f">
+<li>Réservation avec calcul automatique de la durée</li>
+<li>Gestion des conflits de réservation directement en SQL</li>
+<li>Planning admin dynamique et suivi de flotte en direct</li>
+<li>Calcul des heures de retour, mails de confirmation automatiques</li>
+<li>Rôles admin et client, sessions sécurisées</li>
+</ul>
+<ul class="chips"><li>Node.js</li><li>Express</li><li>MySQL</li><li>EJS</li><li>FullCalendar</li><li>Nodemailer</li><li>Bootstrap</li></ul>
+</div>
+<p style="margin:0"><a href="https://youtu.be/4b8i5HOxsFc" target="_blank" rel="noopener"><b>Voir la vidéo de démonstration</b></a></p>
+<p class="note" style="margin:0;padding-top:20px;border-top:1px solid var(--line);color:var(--mute)">Vidéo filmée en environnement local : le site n'est pas hébergé en ligne. Une démonstration complète est disponible en entretien.</p>
+</article>
+
+<div class="grid">
+<article class="card rv"><h3>LeadScan</h3><p>Outil de prospection pour repérer les entreprises françaises dont le site web est obsolète, utilisé pour mes missions freelance.</p></article>
+<article class="card rv"><h3>Site vitrine Laeti'Beauty</h3><p style="margin-bottom:12px"><span class="tag">En cours de réalisation</span></p><p>Site haut de gamme pour un institut de beauté : design soigné, mise en avant des prestations, prise de contact.</p><p style="margin-top:14px"><a href="https://fsxd19.github.io/Laeti-Beauty/" target="_blank" rel="noopener"><b>Voir le site</b></a> &nbsp;·&nbsp; <a href="https://github.com/fsxd19/Laeti-Beauty" target="_blank" rel="noopener">Code GitHub</a></p></article>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Mes compétences</h2>
+<div class="sk rv">
+<div><h3>Systèmes et réseaux</h3><ul><li>Linux (bases)</li><li>Packet Tracer</li><li>Routage RIP</li><li>DNS</li></ul></div>
+<div><h3>Développement</h3><ul><li>Node.js, Express</li><li>HTML, CSS, JavaScript</li><li>SQL, MySQL</li><li>EJS, Bootstrap</li></ul></div>
+<div><h3>IA et automatisation</h3><ul><li>Intégration d'IA dans mes projets</li><li>Automatisation de tâches</li><li>Envoi de mails automatisés</li></ul></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Mon projet</h2>
+<p class="goal rv">Je souhaite poursuivre mes études avec une licence en réseaux. La cybersécurité m'attire et reste une piste pour la suite.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<p>Un projet, une alternance, une question ?</p>
+<a class="m" href="mailto:faissaid59@gmail.com">faissaid59@gmail.com</a>
+<p>GitHub : <a href="https://github.com/fsxd19">fsxd19</a> · <a href="CV_Fais_Said.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a></p>
+</div></footer>
+
+<script>
+(function(){
+var c=document.getElementById('w'),x=c.getContext('2d'),R=[],W,H,dpr,lx=-99,ly=-99,
+rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function size(){dpr=window.devicePixelRatio||1;W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+size();addEventListener('resize',size);
+function add(px,py,a){R.push({x:px,y:py,r:2,a:a||.55})}
+var hero=c.parentElement;
+hero.addEventListener('pointermove',function(e){var b=c.getBoundingClientRect(),px=e.clientX-b.left,py=e.clientY-b.top;
+if(Math.hypot(px-lx,py-ly)>46){lx=px;ly=py;add(px,py)}});
+hero.addEventListener('pointerdown',function(e){var b=c.getBoundingClientRect();add(e.clientX-b.left,e.clientY-b.top,.9)});
+if(!rm){setInterval(function(){add(Math.random()*W,Math.random()*H,.3)},1600);
+for(var i=0;i<4;i++)add(Math.random()*W,Math.random()*H,.3);
+(function loop(){var col=getComputedStyle(document.documentElement).getPropertyValue('--wave').trim();
+x.clearRect(0,0,W,H);x.lineWidth=1.5;
+for(var i=R.length-1;i>=0;i--){var o=R[i];o.r+=1.4;o.a-=.0045;if(o.a<=0){R.splice(i,1);continue}
+for(var k=0;k<3;k++){var r=o.r-k*14;if(r<=0)continue;x.strokeStyle='rgba('+col+','+(o.a*(1-k*.3))+')';x.beginPath();x.arc(o.x,o.y,r,0,6.2832);x.stroke()}}
+requestAnimationFrame(loop)})()}
+/* flotte */
+var N=['Éole','Naïade','Albatros'],L=['En mer','À quai','Maintenance'],S=[0,1,2],E=['14:30','',''];
+var box=document.getElementById('boats');
+function draw(){box.innerHTML='';N.forEach(function(n,i){var b=document.createElement('button');b.className='boat';
+b.innerHTML='<span><b>'+n+'</b><small>'+(S[i]===0?'Retour prévu à '+(E[i]||'15:45'):S[i]===1?'Disponible':'Indisponible')+'</small></span><span class="st s'+S[i]+'">'+L[S[i]]+'</span>';
+b.onclick=function(){S[i]=(S[i]+1)%3;draw();box.children[i].focus()};box.appendChild(b)})}
+/* apparition */
+var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
